@@ -38,6 +38,7 @@ homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
   - bash-completion
+  - coreutils
   - doxygen
   - gettext
   - gifsicle
@@ -66,18 +67,25 @@ homebrew_installed_packages:
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - AdoptOpenJDK/openjdk
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - adoptopenjdk11
   - chromedriver
   - docker
   - dropbox
-  - firefox
-  - google-chrome
+  - emacs
+#  - firefox
+#  - google-chrome
   - handbrake
+  - iterm2
   - licecap
+  - macvim
   - sequel-ace
-  - slack
+  - sequel-pro
+  - skitch
+#  - slack
   - sublime-text
   - transmit
 
