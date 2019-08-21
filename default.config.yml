@@ -50,6 +50,7 @@ homebrew_taps:
   - homebrew/cask
   - AdoptOpenJDK/openjdk
 
+# the commented out apps were already installed before setup using this playbook
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - adoptopenjdk11
