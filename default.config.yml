@@ -16,9 +16,12 @@ dotfiles_files:
   - .osx
   - .vimrc
 
+
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
+  - awscli
+  - aws-iam-authenticator
   - bash-completion
   - coreutils
   - doxygen
@@ -30,6 +33,7 @@ homebrew_installed_packages:
   - hub
   - httpie
   - iperf
+  - kubernetes-cli
   - libevent
   - sqlite
   - mcrypt
@@ -42,6 +46,7 @@ homebrew_installed_packages:
   - readline
   - openssl
   - pv
+  - weaveworks/tap/eksctl
   - wget
   - wrk
 
@@ -49,6 +54,7 @@ homebrew_taps:
   - homebrew/core
   - homebrew/cask
   - AdoptOpenJDK/openjdk
+  - weaveworks/tap
 
 # the commented out apps were already installed before setup using this playbook
 homebrew_cask_appdir: /Applications
