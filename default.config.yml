@@ -1,7 +1,7 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_dotfiles: yes
+configure_dotfiles: no
 configure_sudoers: yes
 configure_terminal: yes
 configure_osx: yes
@@ -15,6 +15,14 @@ dotfiles_files:
   - .inputrc
   - .osx
   - .vimrc
+
+# how about jq? just dl it, chmod +x it, pop it in the executable path, voila?
+# https://github.com/stedolan/jq/releases/download/jq-1.6/jq-osx-amd64
+jq_version: 1.6
+jq_os: osx
+jq_arch: amd64
+
+jq_url: https://github.com/stedolan/jq/releases/download/jq-{{ jq_version }}/jq-{{ jq_os }}-{{ jq_arch }}
 
 
 homebrew_installed_packages:
@@ -46,6 +54,7 @@ homebrew_installed_packages:
   - readline
   - openssl
   - pv
+  - watchman # a utility react native uses to watch for file changes and rebuild
   - weaveworks/tap/eksctl
   - wget
   - wrk
@@ -70,6 +79,7 @@ homebrew_cask_apps:
   - iterm2
   - licecap
   - macvim
+  - react-native-debugger
   - sequel-pro
   - skitch
 #  - slack
