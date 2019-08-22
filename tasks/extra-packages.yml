@@ -32,3 +32,9 @@
     user_install: false
     executable: "{{ item.executable | default(omit) }}"
   loop: "{{ gem_packages }}"
+
+- name: "Download jq from github release at {{ jq_url }}, put it in /usr/local/bin"
+  get_url:
+    url: "{{ jq_url }}"
+    dest: /usr/local/bin/jq
+    mode: '0755'
