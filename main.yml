@@ -35,6 +35,9 @@
       when: configure_terminal
       tags: ['terminal']
 
+    - include_tasks: tasks/homeshick.yml
+      when: configure_homeshick
+
     - import_tasks: tasks/osx.yml
       when: configure_osx
       tags: ['osx']

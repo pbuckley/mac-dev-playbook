@@ -21,6 +21,7 @@ configure_sudoers: true
 sudoers_custom_config: |
   # Allow users in admin group to use sudo with no password.
   %admin ALL=(ALL) NOPASSWD: ALL
+configure_homeshick: false
 
 dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
 dotfiles_repo_accept_hostkey: true
@@ -70,6 +71,7 @@ homebrew_installed_packages:
   - readline
   - openssl
   - pv
+  - thefuck
   - watchman # a utility react native uses to watch for file changes and rebuild
   - weaveworks/tap/eksctl
   - wget
@@ -91,6 +93,7 @@ homebrew_cask_apps:
   - dropbox
   - emacs
 #  - firefox
+  - gpg-suite
 #  - google-chrome
   - handbrake
   - iterm2
