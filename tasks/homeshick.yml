@@ -1,0 +1,17 @@
+---
+
+- name: create homeshick dir
+  file:
+    name: "{{ ansible_env.HOME }}/.homesick/repos"
+    state: directory
+
+- name: clone homeshick
+  git:
+    repo: "git@github.com:andsens/homeshick.git"
+    dest: "{{ ansible_env.HOME }}/.homesick/repos/homeshick"
+
+- name: source homeshick.sh in .bashrc
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/.bashrc"
+    line: source "{{ ansible_env.HOME }}/.homesick/repos/homeshick/homeshick.sh"
+    create: yes

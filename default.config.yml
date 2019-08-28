@@ -2,6 +2,7 @@
 downloads: ~/.ansible-downloads/
 
 configure_dotfiles: no
+configure_homeshick: yes
 configure_sudoers: yes
 configure_terminal: yes
 configure_osx: yes
@@ -54,6 +55,7 @@ homebrew_installed_packages:
   - readline
   - openssl
   - pv
+  - thefuck
   - watchman # a utility react native uses to watch for file changes and rebuild
   - weaveworks/tap/eksctl
   - wget
@@ -74,6 +76,7 @@ homebrew_cask_apps:
   - dropbox
   - emacs
 #  - firefox
+  - gpg-suite
 #  - google-chrome
   - handbrake
   - iterm2
