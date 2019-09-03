@@ -56,9 +56,12 @@ homebrew_installed_packages:
   - github/gh/gh
   - go
   - gpg
+  - helmfile
+  - hub
   - httpie
   - iperf
   - kubernetes-cli
+  - kubernetes-helm
   - libevent
   - sqlite
   - mcrypt
@@ -76,6 +79,7 @@ homebrew_installed_packages:
   - weaveworks/tap/eksctl
   - wget
   - wrk
+  - yarn
   - zsh-history-substring-search
 
 homebrew_taps:
@@ -151,6 +155,8 @@ sublime_package_control:
   - "SublimeLinter-contrib-yamllint"
   - "TrailingSpaces"
   - "WordCount"
+
+helm_packages: ["https://github.com/databus23/helm-diff"]
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []

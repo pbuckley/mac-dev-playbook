@@ -33,6 +33,15 @@
     executable: "{{ item.executable | default(omit) }}"
   loop: "{{ gem_packages }}"
 
+- name: mkdir ~/.helm/plugins
+  file:
+    name: "{{ ansible_env.HOME }}/.helm/plugins"
+    state: directory
+
+- name: Install helm plugins.
+  command: "helm plugin install {{ item }}"
+  with_items: "{{ helm_packages }}"
+
 - name: "Download jq from github release at {{ jq_url }}, put it in /usr/local/bin"
   get_url:
     url: "{{ jq_url }}"
