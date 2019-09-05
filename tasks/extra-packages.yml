@@ -40,7 +40,12 @@
 
 - name: Install helm plugins.
   command: "helm plugin install {{ item }}"
+  args:
+    creates: "{{ ansible_env.HOME }}/.helm/plugins/{{ item | basename }}"
   with_items: "{{ helm_packages }}"
+
+- name: First time init helm client-only.
+  command: "helm init --client-only"
 
 - name: "Download jq from github release at {{ jq_url }}, put it in /usr/local/bin"
   get_url:

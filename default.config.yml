@@ -64,6 +64,7 @@ homebrew_installed_packages:
   - kubernetes-helm
   - libevent
   - sqlite
+  - markdown
   - mcrypt
   - nmap
   - node
@@ -73,6 +74,7 @@ homebrew_installed_packages:
   - cowsay
   - readline
   - openssl
+  - pinentry-mac
   - pv
   - thefuck
   - watchman # a utility react native uses to watch for file changes and rebuild
