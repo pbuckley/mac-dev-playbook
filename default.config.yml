@@ -33,6 +33,10 @@ dotfiles_files:
   - .osx
   - .vimrc
 
+usr_local_path: /usr/local
+easy_install_installed_binary: "{{ usr_local_path }}/bin/easy_install-3.7"
+pip_installed_binary: "{{ usr_local_path }}/bin/pip"
+
 # how about jq? just dl it, chmod +x it, pop it in the executable path, voila?
 # https://github.com/stedolan/jq/releases/download/jq-1.6/jq-osx-amd64
 jq_version: 1.6
@@ -157,6 +161,18 @@ sublime_package_control:
   - "SublimeLinter-contrib-yamllint"
   - "TrailingSpaces"
   - "WordCount"
+
+easy_install_packages:
+  - name: pip
+    state: present # present/absent/latest, default: present
+    executable: "{{ easy_install_installed_binary }}"
+pip_packages:
+  - name: virtualenv
+    state: latest # present/absent/latest, default: present
+    executable: "{{ pip_installed_binary }}"
+  - name: pylint
+    state: latest # present/absent/latest, default: present
+    executable: "{{ pip_installed_binary }}"
 
 helm_packages: ["https://github.com/databus23/helm-diff"]
 
