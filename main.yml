@@ -30,8 +30,15 @@
     - include_tasks: tasks/homeshick.yml
       when: configure_homeshick
 
+    - include_tasks: tasks/android_studio.yml
+      when: configure_android_studio
+
     - include_tasks: tasks/terminal.yml
       when: configure_terminal
+
+    - include_tasks: tasks/rvm.yml
+      when: configure_rvm
+      tags: ['rvm']
 
     - include_tasks: tasks/osx.yml
       when: configure_osx
