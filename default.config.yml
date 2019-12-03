@@ -3,6 +3,8 @@ downloads: ~/.ansible-downloads/
 
 configure_dotfiles: no
 configure_homeshick: yes
+configure_android_studio: no # this is more of a one-time thing, don't update every time
+configure_rvm: no # this doesn't work :(
 configure_sudoers: yes
 configure_terminal: yes
 configure_osx: yes
@@ -32,6 +34,8 @@ jq_url: https://github.com/stedolan/jq/releases/download/jq-{{ jq_version }}/jq-
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
+  - ag
+  - ant
   - autoconf
   - awscli
   - aws-iam-authenticator
@@ -52,6 +56,7 @@ homebrew_installed_packages:
   - libevent
   - sqlite
   - markdown
+  - maven
   - mcrypt
   - nmap
   - node
@@ -64,6 +69,7 @@ homebrew_installed_packages:
   - pinentry-mac
   - pv
   - thefuck
+  - tree
   - watchman # a utility react native uses to watch for file changes and rebuild
   - weaveworks/tap/eksctl
   - wget
@@ -79,7 +85,9 @@ homebrew_taps:
 # the commented out apps were already installed before setup using this playbook
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - adoptopenjdk11
+  - adoptopenjdk8
+  - android-sdk
+  - android-ndk
   - chromedriver
   - docker
   - dropbox
@@ -91,6 +99,7 @@ homebrew_cask_apps:
   - iterm2
   - licecap
   - macvim
+  - minikube
   - react-native-debugger
   - sequel-pro
   - skitch
@@ -98,6 +107,7 @@ homebrew_cask_apps:
   - sublime-text
   - transmit
   - vagrant
+  - virtualbox
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
