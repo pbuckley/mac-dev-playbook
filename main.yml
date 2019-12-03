@@ -35,8 +35,18 @@
       when: configure_terminal
       tags: ['terminal']
 
-    - include_tasks: tasks/homeshick.yml
+    - import_tasks: tasks/homeshick.yml
       when: configure_homeshick
+
+    - import_tasks: tasks/android_studio.yml
+      when: configure_android_studio
+
+    - import_tasks: tasks/terminal.yml
+      when: configure_terminal
+
+    - import_tasks: tasks/rvm.yml
+      when: configure_rvm
+      tags: ['rvm']
 
     - import_tasks: tasks/osx.yml
       when: configure_osx
@@ -53,7 +63,7 @@
       tags: ['post']
       block:
         - name: Run configured post-provision ansible task files.
-          include_tasks: "{{ outer_item }}"
+          import_tasks: "{{ outer_item }}"
           loop_control:
             loop_var: outer_item
           with_fileglob: "{{ post_provision_tasks | default(omit) }}"
