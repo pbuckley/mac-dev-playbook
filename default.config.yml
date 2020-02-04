@@ -47,7 +47,6 @@ jq_arch: amd64
 
 jq_url: https://github.com/stedolan/jq/releases/download/jq-{{ jq_version }}/jq-{{ jq_os }}-{{ jq_arch }}
 
-
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - ag
@@ -67,6 +66,7 @@ homebrew_installed_packages:
   - helmfile
   - hub
   - httpie
+  - inetutils
   - iperf
   - kubernetes-cli
   - kubernetes-helm
@@ -85,6 +85,7 @@ homebrew_installed_packages:
   - openssl
   - pinentry-mac
   - pv
+  - telnet
   - thefuck
   - tree
   - watchman # a utility react native uses to watch for file changes and rebuild
