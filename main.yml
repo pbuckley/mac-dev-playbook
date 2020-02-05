@@ -27,6 +27,11 @@
       tags: ['dock']
 
   tasks:
+    - import_tasks: tasks/ansible-setup.yml
+
+    - import_tasks: tasks/session-manager-plugin.yml
+      tags: ['sess']
+
     - import_tasks: tasks/sudoers.yml
       when: configure_sudoers
       tags: ['sudoers']
