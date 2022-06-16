@@ -43,6 +43,11 @@
     executable: "{{ item.executable | default(omit) }}"
   loop: "{{ gem_packages }}"
 
+- name: mkdir ~/.emacs-saved-desktops
+  file:
+    name: "{{ ansible_env.HOME }}/.emacs-saved-desktops"
+    state: directory
+
 - name: mkdir ~/.helm/plugins
   file:
     name: "{{ ansible_env.HOME }}/.helm/plugins"

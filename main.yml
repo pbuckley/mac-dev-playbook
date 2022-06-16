@@ -42,6 +42,7 @@
 
     - import_tasks: tasks/homeshick.yml
       when: configure_homeshick
+      tags: ['sick']
 
     - import_tasks: tasks/android_studio.yml
       when: configure_android_studio

@@ -54,20 +54,26 @@ homebrew_installed_packages:
   - autoconf
   - awscli
   - aws-iam-authenticator
+  - bash
   - bash-completion
+  - composer
   - coreutils
   - doxygen
+  - fzf
   - gettext
+  - gh
   - gifsicle
   - git
   - github/gh/gh
   - go
   - gpg
+  - helm@2 # for Wayfair we are on helm@2
   - helmfile
   - hub
   - httpie
   - inetutils
   - iperf
+  - kind
   - kubernetes-cli
   - kubernetes-helm
   - libevent
@@ -75,17 +81,19 @@ homebrew_installed_packages:
   - markdown
   - maven
   - mcrypt
+  - minikube
+  - mysql
   - nmap
   - node
   - nvm
-  - php
+  - php@7.4
   - ssh-copy-id
   - cowsay
   - readline
   - openssl
   - pinentry-mac
   - pv
-  - telnet
+  # - telnet # inetutils already installs it, so conflict?
   - thefuck
   - tree
   - watchman # a utility react native uses to watch for file changes and rebuild
@@ -111,14 +119,14 @@ homebrew_cask_apps:
   - docker
   - dropbox
   - emacs
-#  - firefox
+  - firefox
   - gpg-suite
 #  - google-chrome
+  - google-cloud-sdk
   - handbrake
   - iterm2
   - licecap
   - macvim
-  - minikube
   - react-native-debugger
   - sequel-ace
   - sequel-pro
