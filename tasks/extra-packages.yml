@@ -53,17 +53,18 @@
     name: "{{ ansible_env.HOME }}/.helm/plugins"
     state: directory
 
-- name: Install helm plugins.
-  command: "helm plugin install {{ item }}"
-  args:
-    creates: "{{ ansible_env.HOME }}/.helm/plugins/{{ item | basename }}"
-  with_items: "{{ helm_packages }}"
+# - name: Install helm plugins.
+#   command: "helm plugin install {{ item }}"
+#   args:
+#     creates: "{{ ansible_env.HOME }}/.helm/plugins/{{ item | basename }}"
+#   with_items: "{{ helm_packages }}"
 
-- name: First time init helm client-only.
-  command: "helm init --client-only"
+# - name: First time init helm client-only.
+#   command: "helm init --client-only"
 
 - name: "Download jq from github release at {{ jq_url }}, put it in /usr/local/bin"
   get_url:
     url: "{{ jq_url }}"
     dest: /usr/local/bin/jq
     mode: '0755'
+  become: yes

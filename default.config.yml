@@ -1,4 +1,16 @@
 ---
+
+# -bash: kubectl: command not found
+# -bash: hub: command not found
+# -bash: thefuck: command not found
+# -bash: /usr/local/bin/git-merged-branches: Permission denied
+# -bash: /usr/local/bin/git-unmerged-branches: Permission denied
+# -bash: /usr/local/opt/nvm/nvm.sh: No such file or directory
+
+# somehow I had to install homebrew from https://docs.brew.sh/Installation
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+#
+
 downloads: ~/.ansible-downloads/
 
 configure_android_studio: false # this is more of a one-time thing, don't update every time
@@ -36,7 +48,7 @@ dotfiles_files:
   - .vimrc
 
 usr_local_path: /usr/local
-easy_install_installed_binary: "{{ usr_local_path }}/bin/easy_install-3.7"
+easy_install_installed_binary: /usr/bin/easy_install
 pip_installed_binary: "{{ usr_local_path }}/bin/pip"
 
 # how about jq? just dl it, chmod +x it, pop it in the executable path, voila?
@@ -54,6 +66,7 @@ homebrew_installed_packages:
   - autoconf
   - awscli
   - aws-iam-authenticator
+  - aztfexport
   - bash
   - bash-completion
   - composer
@@ -65,6 +78,7 @@ homebrew_installed_packages:
   - gifsicle
   - git
   - github/gh/gh
+  - gnu-sed
   - go
   - gpg
   - helm@2 # for Wayfair we are on helm@2
@@ -99,9 +113,13 @@ homebrew_installed_packages:
   - watchman # a utility react native uses to watch for file changes and rebuild
   - weaveworks/tap/eksctl
   - wget
-  - wrk
+#  - wrk # no bottle available!
   - yarn
   - zsh-history-substring-search
+
+# this is prolly not worth it - it is a pip package I could just
+# instead of this crazy contraption of a complete package brew does
+#  - ykman # yubikey manager CLI to use TOTP yubikey with AWS cli
 
 homebrew_taps:
   - homebrew/core
@@ -121,17 +139,18 @@ homebrew_cask_apps:
   - emacs
   - firefox
   - gpg-suite
-#  - google-chrome
   - google-cloud-sdk
+  - google-chrome
   - handbrake
   - iterm2
   - licecap
   - macvim
+#  - minikube # no cask with this name exists?
   - react-native-debugger
   - sequel-ace
   - sequel-pro
   - skitch
-#  - slack
+  - slack
   - sublime-text
   - transmit
   - vagrant
@@ -195,6 +214,7 @@ pip_packages:
     executable: "{{ pip_installed_binary }}"
 
 helm_packages: ["https://github.com/databus23/helm-diff"]
+# No prebuild binary for macos-arm64 on helm_packages :(
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
