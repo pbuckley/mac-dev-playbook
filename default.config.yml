@@ -81,7 +81,7 @@ homebrew_installed_packages:
   - gnu-sed
   - go
   - gpg
-  - helm@2 # for Wayfair we are on helm@2
+  - helm
   - helmfile
   - hub
   - httpie
@@ -100,7 +100,7 @@ homebrew_installed_packages:
   - nmap
   - node
   - nvm
-  - php@7.4
+#  - php@7.4
   - ssh-copy-id
   - cowsay
   - readline
