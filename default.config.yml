@@ -130,7 +130,7 @@ homebrew_taps:
 # the commented out apps were already installed before setup using this playbook
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - adoptopenjdk8
+#  - adoptopenjdk8 # requires Rosetta 2, skipped for now :(
   - alfred
   - android-sdk
   - android-ndk
@@ -157,7 +157,7 @@ homebrew_cask_apps:
   - sublime-text
   - transmit
   - vagrant
-  - virtualbox
+  # - virtualbox - requires intel :(
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
