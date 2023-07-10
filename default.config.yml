@@ -57,7 +57,7 @@ jq_version: 1.6
 jq_os: osx
 jq_arch: amd64
 
-jq_url: https://github.com/stedolan/jq/releases/download/jq-{{ jq_version }}/jq-{{ jq_os }}-{{ jq_arch }}
+jq_url: https://github.com/jqlang/jq/releases/download/jq-{{ jq_version }}/jq-{{ jq_os }}-{{ jq_arch }}
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
@@ -131,8 +131,11 @@ homebrew_taps:
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - adoptopenjdk8
+  - alfred
   - android-sdk
   - android-ndk
+  - basecamp
+  - betterdiscord-installer
   - chromedriver
   - docker
   - dropbox
