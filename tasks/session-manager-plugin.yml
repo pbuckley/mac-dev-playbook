@@ -8,6 +8,6 @@
   tags: ['sess']
 
 - name: install session-manager bundle
-  command: "/Users/pb/sessionmanager-bundle/install -i /usr/local/sessionmanagerplugin -b /usr/local/bin/session-manager-plugin"
+  command: "/Users/peter/sessionmanager-bundle/install -i /usr/local/sessionmanagerplugin -b /usr/local/bin/session-manager-plugin"
   become: yes
   tags: ['sess']
