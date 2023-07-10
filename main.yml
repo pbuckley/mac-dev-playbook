@@ -27,8 +27,6 @@
       tags: ['dock']
 
   tasks:
-    - import_tasks: tasks/ansible-setup.yml
-
     - import_tasks: tasks/session-manager-plugin.yml
       tags: ['sess']
 
