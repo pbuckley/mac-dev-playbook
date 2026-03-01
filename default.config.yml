@@ -133,9 +133,7 @@ homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
 #  - adoptopenjdk8 # requires Rosetta 2, skipped for now :(
   - alfred
-  - android-sdk
   - android-ndk
-  - basecamp
   - betterdiscord-installer
   - chromedriver
   - docker
@@ -152,8 +150,6 @@ homebrew_cask_apps:
 #  - minikube # no cask with this name exists?
   - react-native-debugger
   - sequel-ace
-  - sequel-pro
-  - skitch
   - slack
   - sublime-text
   - transmit
