@@ -40,6 +40,7 @@ configure_homeshick: false
 dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
 dotfiles_repo_accept_hostkey: true
 dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
+dotfiles_repo_version: master # Replace with your default branch
 dotfiles_files:
   - .zshrc
   - .gitignore
@@ -77,8 +78,8 @@ homebrew_installed_packages:
   - gh
   - gifsicle
   - git
-  - github/gh/gh
   - gnu-sed
+  - gh
   - go
   - gpg
   - helm
@@ -100,9 +101,7 @@ homebrew_installed_packages:
   - nmap
   - node
   - nvm
-#  - php@7.4
   - ssh-copy-id
-  - cowsay
   - readline
   - openssl
   - pinentry-mac
@@ -121,11 +120,13 @@ homebrew_installed_packages:
 # instead of this crazy contraption of a complete package brew does
 #  - ykman # yubikey manager CLI to use TOTP yubikey with AWS cli
 
-homebrew_taps:
-  - homebrew/core
-  - homebrew/cask
-  - AdoptOpenJDK/openjdk
-  - weaveworks/tap
+# seems Jeff or brew broke these or they're no longer needed as of Mar 2026?
+#homebrew_taps:
+#  - homebrew/core
+#  - homebrew/cask
+#  - AdoptOpenJDK/openjdk
+#  - weaveworks/tap
+homebrew_taps: []
 
 # the commented out apps were already installed before setup using this playbook
 homebrew_cask_appdir: /Applications
@@ -159,7 +160,7 @@ homebrew_cask_apps:
   - vagrant
   # - virtualbox - requires intel :(
 
-# See `geerlingguy.mas` role documentation for usage instructions.
+# See `geerlingguy.mac.mas` role documentation for usage instructions.
 mas_installed_apps: []
 mas_email: ""
 mas_password: ""
@@ -184,7 +185,7 @@ npm_packages: []
 
 # Set to 'true' to configure Sublime Text.
 configure_sublime: false
-sublime_base_path: '~/Library/Application Support/Sublime Text'
+sublime_base_path: "~/Library/Application Support/Sublime Text"
 sublime_config_path: "Packages/User"
 sublime_package_control:
   - "DocBlockr"
@@ -193,12 +194,12 @@ sublime_package_control:
   - "GitHub Flavored Markdown Preview"
   - "Jinja2"
   - "Package Control"
-  - "PHP-Twig"
   - "Pretty JSON"
   - "SublimeLinter"
   - "SublimeLinter-contrib-yamllint"
+  - "Theme - Cobalt2"
   - "TrailingSpaces"
-  - "WordCount"
+  - "WordingStatus"
 
 easy_install_packages:
   - name: pip
