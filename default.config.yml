@@ -88,6 +88,7 @@ homebrew_installed_packages:
   - httpie
   - inetutils
   - iperf
+  - ispell
   - kind
   - kubernetes-cli
   - kubernetes-helm
